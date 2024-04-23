@@ -1,7 +1,13 @@
-import header from './header/header'
-import footer from './footer/footer'
+import Header from './header/header'
+import Footer from './footer/footer'
+import Logo from './Logo'
+import Container from './container/container'
+import Logout from './header/Logout'
 
 export{
-    header,
-    footer
+    Header,
+    Footer,
+    Logo,
+    Container,
+    Logout,
 }
