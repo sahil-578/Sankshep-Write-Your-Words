@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
-import {Button, Input, Logo} from "./index"
+import {Btn, Input, Logo} from "./index"
 import {useDispatch} from "react-redux"
 import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
@@ -70,7 +70,7 @@ function Login() {
                     required: true,
                 })} />
 
-                <Button type="submit" className="w-full">Sign in</Button>
+                <Btn type="submit" className="w-full">Sign in</Btn>
             </div>
         </form>
         </div>

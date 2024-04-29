@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import appwriteService from "../appwrite/config"
+import appwriteService from "../appwrite/appwriteConfig"
 import {Link} from 'react-router-dom'
 
 function Postcard({$id, title, featuredImage}) {

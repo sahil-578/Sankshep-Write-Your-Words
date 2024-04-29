@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import authService from '../appwrite/auth'
 import {Link ,useNavigate} from 'react-router-dom'
 import {login} from '../store/authSlice'
-import {Button, Input, Logo} from './index.js'
+import {Btn, Input, Logo} from './index.js'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
 
@@ -73,9 +73,9 @@ function Signup() {
                         {...register("password", {
                             required: true,})} />
                         
-                        <Button type="submit" className="w-full">
+                        <Btn type="submit" className="w-full">
                             Create Account
-                        </Button>
+                        </Btn>
                     
                     </div>
                 </form>
