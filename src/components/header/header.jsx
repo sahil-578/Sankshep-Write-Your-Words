@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {Container, Logout, Logo} from '../index'
-import {Link} from 'react-router-dom'
+import {Container, Logo, Logout} from '../index'
+import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-const Header = () => {
-  const authStatus = useSelector((state) => state.auth?.status)
+function Header() {
+  const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
 
   const navItems = [

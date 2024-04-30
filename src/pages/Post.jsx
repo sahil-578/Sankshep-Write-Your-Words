@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/appwriteConfig";
-import { Btn, Container } from "../components";
+import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
@@ -47,13 +47,13 @@ export default function Post(){
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Btn bgColor="bg-green-500" className="mr-3">
+                                <Button bgColor="bg-green-500" className="mr-3">
                                     Edit
-                                </Btn>
+                                </Button>
                             </Link>
-                            <Btn bgColor="bg-red-500" onClick={deletePost}>
+                            <Button bgColor="bg-red-500" onClick={deletePost}>
                                 Delete
-                            </Btn>
+                            </Button>
                         </div>
                     )}
                 </div>

@@ -1,26 +1,23 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, {useCallback} from 'react';
+import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { Btn, Input, RealTimeEditor, Select } from "../index";
+import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PostForm({post}) {
-
-    const {register, handleSubmit, watch, setValue, control} =  useForm({
-
+export default function PostForm({ post }) {
+    const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
             slug: post?.$id || "",
             content: post?.content || "",
             status: post?.status || "active",
         },
-
     });
-    
+
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
@@ -92,9 +89,9 @@ export default function PostForm({post}) {
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
-                    }} />
-                    
-                <RealTimeEditor label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                    }}
+                />
+                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
             <div className="w-1/3 px-2">
                 <Input
@@ -119,9 +116,9 @@ export default function PostForm({post}) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Btn type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
-                </Btn>
+                </Button>
             </div>
         </form>
     );
